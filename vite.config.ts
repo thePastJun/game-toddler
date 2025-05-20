@@ -4,7 +4,7 @@ import UnoCSS from 'unocss/vite'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: "/",
+  base: "/gamePass/",
   plugins: [
     vue(),
     UnoCSS(),
