@@ -18,21 +18,24 @@ jobs:
       # 1. 检出代码
       - name: Checkout code
         uses: actions/checkout@v3
-
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
       # 2. 配置 Node.js 环境
       - name: Set up Node
         uses: actions/setup-node@v3
         with:
-          node-version: '18.18.0'   # 根据你的项目需要选择版本
-          cache: 'npm'
+          node-version: 20   # 根据你的项目需要选择版本
+          cache: 'pnpm'
 
       # 3. 安装依赖
       - name: Install dependencies
-        run: npm install
+        run: pnpm install
 
       # 4. 构建项目
       - name: Build project
-        run: npm run build
+        run: pnpm run build
 
       # 5. 部署到 GitHub Pages
       - name: Deploy to GitHub Pages
